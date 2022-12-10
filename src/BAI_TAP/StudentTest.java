@@ -33,12 +33,14 @@ public class StudentTest {
 						}
 					}
 					break;
+					
 				case 2:
 					for(int i = 0; i < studentList.size(); i++) {
 						studentList.get(i).showInfo();
 					}
 					break;
 				case 3:
+					
 					System.out.println("Nhập vào mã sinh viên: ");
 					sc.nextLine();
 					String mSV = sc.nextLine();
@@ -87,25 +89,40 @@ public class StudentTest {
 					}
 					
 					break;
+					
 				case 4:
+					int temp = 0;
+					double max_mark = studentList.get(0).getMark();
+					for(int i = 0; i< studentList.size(); i++) {
+						if(studentList.get(i).getMark() > max_mark) {
+							max_mark = studentList.get(i).getMark();
+							temp = i;
+						}
+					}
+					System.out.println("Sinh viên có điểm cao nhất là: ");
+					studentList.get(temp).showInfo();
 					break;
+					
 				case 5:
 					break;
+					
 				case 6:
 					break;
+					
 				case 7:
 					break;
 			}
-		}while(choose != 7);
+		}while(choose != 8);
 	}
 	
 	static void showMenu() {
 		System.out.println("1. Nhập vào số sinh viên");
 		System.out.println("2. Hiển thị thông tin sinh viên");
 		System.out.println("3. Cập nhật thông tin sinh viên");
-		System.out.println("4. Nhập vào số sinh viên");
-		System.out.println("5. Nhập vào số sinh viên");
-		System.out.println("6. Nhập vào số sinh viên");
-		System.out.println("7. Nhập vào số sinh viên");
+		System.out.println("4. Sinh viên có điểm trung bình cao nhất");
+		System.out.println("5. Sinh viên có điểm trung bình thấp nhất");
+		System.out.println("6. Sắp xếp viên giảm dần theo điểm");
+		System.out.println("7. Sắp xếp sinh viên tăng dần theo tên");
+		System.out.println("8. Thoát chương trình");
 	}
 }
